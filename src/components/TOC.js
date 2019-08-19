@@ -6,9 +6,9 @@ class TOC extends Component {
 
   shouldComponentUpdate(){
     console.log('TOC render shouldComponentUpdate');
-    return true;
+    return false;
   }
-  
+
   render(){
   console.log('TOC render'); //render 호출되는지 로그 찍어보기
   var lists=[];
