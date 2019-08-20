@@ -9,8 +9,11 @@ class TOC extends Component {
     ,newProps.data
     ,this.props.data
   );
+  if(this.props.data===newProps.data){
     return false;
   }
+  return true;
+}
 
   render(){
   console.log('TOC render'); //render 호출되는지 로그 찍어보기
