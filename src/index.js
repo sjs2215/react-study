@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // 아래 react.strictmode때문에 개발 환경에선 컴포넌트가 두번 실행됨. 빌드해서는 노상관
   <React.StrictMode>
     <App />
   </React.StrictMode>
