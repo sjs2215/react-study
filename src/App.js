@@ -20,13 +20,13 @@ function Counter({title, initValue}){ // 컴포넌트를 정의하는 함수
 return <div>
   <h1>{title}</h1>
   <button onClick={up}>+</button> 
-  {/* react에선 for문 보다 map함수를 더 많이 쓴다. 응집력이 더 높음 */}
+  {/* react에선 for문 보다 'map함수'를 더 많이 쓴다. 응집력이 더 높음 */}
   <input type="number" value={step} onChange={stepHandler}/>
   {count}
-  <ol>
+  <ol> 
     {history.map((e, index)=><li key={index}>{e}</li>)}
-  </ol>
-</div>
+  </ol>   
+</div> 
 }
 
 function App() {
