@@ -17,7 +17,9 @@ function Counter({title, initValue}){ // 컴포넌트를 정의하는 함수
   const stepHandler = (evt) => {
     setStep(Number(evt.target.value));
   };
-return <div>
+  const style = {border:'10px solid black', padding:10, backgroundColor:'tomato'};
+
+return <div style={style}>
   <h1>{title}</h1>
   <button onClick={up}>+</button> 
   {/* react에선 for문 보다 'map함수'를 더 많이 쓴다. 응집력이 더 높음 */}
@@ -28,6 +30,7 @@ return <div>
   </ol>   
 </div> 
 }
+
 
 function CounterUseEffect(){
   const [count, setCount] = useState(0);
@@ -42,7 +45,8 @@ function CounterUseEffect(){
     }
   },[]);
  
-  return <div>
+  const style = { border: '10px solid black', padding:10 };
+  return <div style={style}>
     <h1>useEffect Counter</h1> {count}
   </div>
 }
