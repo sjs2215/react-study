@@ -1,6 +1,7 @@
 import './App.css'
 import {useEffect, useState} from 'react';
 import { Container } from '@mui/system';
+import { Grid } from '@mui/material';
 
 function Counter({title, initValue}){ // 컴포넌트를 정의하는 함수
 //return 은 하나의 태그만 해야함. 그래서 div로 감싸줌.
@@ -23,10 +24,9 @@ function Counter({title, initValue}){ // 컴포넌트를 정의하는 함수
 return <div style={style}>
   <h1>{title}</h1>
   <button onClick={up}>+</button> 
-  {/* react에선 for문 보다 'map함수'를 더 많이 쓴다. 응집력이 더 높음 */}
   <input type="number" value={step} onChange={stepHandler}/>
   {count}
-  <ol> 
+  <ol>   {/* react에선 for문 보다 'map함수'를 더 많이 쓴다. 응집력이 더 높음 */}
     {history.map((e, index)=><li key={index}>{e}</li>)}
   </ol>   
 </div> 
@@ -55,9 +55,17 @@ function CounterUseEffect(){
 function App() {
   return (
     <Container>
-      {/* 아래와 같이 컴포넌트 사용 */}
-      <Counter title="불면증 카운터" initValue={10}></Counter>  
+      <Grid container maxWidth="xl">
+      <Grid item xs={12} sm={6} md={4}>
+      <Counter title="불면증 카운터" initValue={10}></Counter> 
+      </Grid> 
+      <Grid item xs={12} sm={6} md={4}>
       <CounterUseEffect></CounterUseEffect>
+      </Grid>
+      <Grid item xs={12} sm={6} md={4}>
+      <CounterUseEffect></CounterUseEffect>
+      </Grid>
+      </Grid>
     </Container>
   );
 }
